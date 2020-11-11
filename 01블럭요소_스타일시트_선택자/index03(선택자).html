@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type = "text/css">
+        * { }  /*디자인 시작전에 전역선택자로 선언하고 시작한다.*/
+        b {color: red; }
+        ul, li {list-style: none; } /* ul li에 동시에 적용 (동그라미가 없어짐)*/
+
+        #a1 {color : forestgreen;} 
+        .b1 {color : salmon;}
+
+        .abox p {color : red;} /*abox 띄어쓰기 p태그는 다 적용*/
+        .bbox > p {color : darkorange;} /*bbox 바로 아래 자식한테만 적용 */
+    </style>
+
+</head>
+<body>
+    
+    <b>태그선택자</b>
+
+    <ul>
+        <li>다중선택자</li>
+        <li>다중선택자</li>
+    </ul>
+    <p id="a1">아이디선택자는 #</p> <!--아이디는 고유함-->
+    <p class="b1">클래스선택자 .</p> <!--중복이 가능함-->
+    
+    <div class="abox">
+        <p>하위선택자</p>
+        <p>하위선택자</p>
+
+        <ul>
+            <li><p>하위선택자 공백</p></li>
+            <li><p>하위선택자 공백</p></li>
+        </ul>
+
+    </div>
+    <div class="bbox">
+        <p>자식선택자 > </p>
+        <p>자식선택자 > </p>
+
+        <ul>
+            <li><p>자식선택자 ></p></li>
+            <li><p>자식선택자 ></p></li>
+        </ul>
+    </div>
+</body>
+</html>
