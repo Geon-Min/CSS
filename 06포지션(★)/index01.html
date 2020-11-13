@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style type="text/css">
+        *{padding: 0; margin:0;}
+        .list{width: 50%; margin: 0 auto;} /*가운데 정렬*/
+        .content {position: relative;}
+
+        p{height: 100px; border: 1px solid;}
+        .inner1{background-color: aqua;}
+        .inner2{background-color: brown; 
+                position: absolute; 
+                right: 100px; 
+                top: 50px;
+                width: 70px; 
+                height: 70px;
+        }
+        .inner3{background-color: chartreuse;}
+    </style>
+</head>
+<body>
+    <!-- 포지션의 첫번째 규칙: 부모요소에 position:relative 들어 가지 않으면 body기준으로 좌표가 잡힘 -->
+    <!-- left, right 중에 하나, top, bottom 중에 하나 선택 -->
+    <!-- content가 static을 가지고 있음  -->
+    <!-- 아무것도 안주면 boby기준으로 -->
+    <div class ="list">
+        <div class ="content"></div>
+            <p class = "inner1">포지션</p>
+            <p class = "inner2">포지션</p>
+            <p class = "inner3">포지션</p>
+    </div>
+</body>
+</html>
