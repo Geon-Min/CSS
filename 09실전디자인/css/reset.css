@@ -1,0 +1,38 @@
+/* -----웹폰트 선언----- */
+
+/*css 폰트 url(css에서는 <style> 입력 안함)*/
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
+
+/*=======디자인 시작시 전역 설정========*/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box; /*박스에 border-box설정*/
+
+}
+
+body, html{
+    font-family: 'Nanum Pen Script', cursive;
+    width: 100%;
+    min-width: 320px;/*body영역의 최소 사이즈*/
+}
+
+img {
+    max-width: 100%; /*사이즈가 변해도 넓이는 유지*/
+    height: auto;
+}
+
+input, textarea, button, select {
+    /*고유하게 적용되어 있는 form관련 요소들을 제거해서 
+    여러 ＊브라우저에서 동일한 form관련 태그 디자인이 보이도록 처리.
+    */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+ul, li, ol, dl{
+    list-style: none;
+}
