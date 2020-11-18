@@ -21,20 +21,129 @@
 
 
     <style type="text/css">
-    
-    /*768이상 사이즈에서 해당 css가 동작됩니다.*/
-    @media(min-width: 768px){
-        .box1{border: 1px solid black;}
-    }
-    .box {width: 100%; margin: 0 auto; overflow: hidden;}
 
-    @media(min-width: 1300px){
-        .box2 .inner{width: 16.6666%; float: left;}
+    section {margin-top: 50px;}
+    .my-header {
+        background-color: black;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 50;
     }
-    @media(max-width: 767px){
-        .box2 .inner{width: 50%; float:left;}
+    .my-header a img{
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
     }
 
+    .navbar {
+        margin-bottom: 0;
+    }
+
+    .navbar-brand{
+        padding: 10px 20px;
+
+    }
+
+    .navbar-toggle{
+        /* background-color: white; */
+        border-color: white;
+    }
+
+    .navbar-toggle span{
+        background-color:white;
+    }
+
+
+
+    /* footer */
+    footer {
+    background-color: #263238; 
+    color: white;
+    font-size: 15px;
+    padding: 40px 0; /*위아래 40 좌우 0*/
+    margin-top: 70px; /* footer 바깥 여백 70, 본문영역과 붙지 않도록*/
+    }
+
+    footer .footer-copyright address{margin-bottom: 0;}
+    footer .footer-menu {text-align: right;} /* 부트스트랩 text-right로 대체 가능*/
+
+
+    footer .footer-menu li{
+        display: inline-block;
+        padding: 0 10px;
+    }
+    footer .footer-menu li a{
+        text-decoration: none;
+        color: white;
+        font-size: 13px;
+    }
+
+    /* 배너 */
+    my-banner { position: relative;
+        /*암영 넣는 방법*/
+
+    }
+    .carousel-control.right,
+    .carousel-control.left{
+        background-image: linear-gradient(to right,rgba(0,0,0,0) 0,rgba(0,0,0,0) 100%);
+    }
+    /* backgroud-image : none 도 가능*/
+
+    .prod-list, .prod-box{
+        display: block;
+        border: 1px solid#ddd;
+        text-align: center;
+    }
+
+    .prod-list,
+    .prod-list > li
+    {
+        padding: 5px;
+    }
+
+    .prod-box{
+        position: relative;
+    }
+
+    .prod-box .arrow{
+        display: block;
+        width: 35px;
+        height: 35px;
+        line-height: 35px;
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        background-color: gray;
+        color: white;
+        opacity: 1;
+    }
+
+    .prod-box .hover{
+        display: block;
+        width: 80px;
+        height: 35px;
+        line-height: 35px;
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        background-color: #0000ee;
+        color: white;
+        opacity: 0; /* 투명도 0~1*/
+    }
+
+    /*hover기능시 arrow 투명도 변경*/
+    .prod-box:hover > .arrow{
+        opacity: 0;
+    }
+    .prod-box:hover > .hover{
+        opacity: 1;
+    }
+
+    .prod-box:hover{
+        border-color: #0000ee;
+    }
 
 
 
@@ -46,18 +155,169 @@
 </head>
 <body> 
 
-    <div class="box2">
-        <div class="inner">내용</div>
-        <div class="inner">내용</div>
-        <div class="inner">내용</div>
-        <div class="inner">내용</div>
-        <div class="inner">내용</div>
-        <div class="inner">내용</div>
-    </div>
-    
+    <header class="my-header">
+        <nav class="navbar">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>                        
+                </button>
 
-    
+                <!-- 로고 -->
+                <a class="navbar-brand" href="#">
+                    <img src="img/logo.svg" alt="logo">
+                </a>
+              </div>
 
+              <!-- 메뉴 작성 부분  -->
+              <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                  <li class="active"><a href="#">Home</a></li>
+                  <li><a href="#">Page 2</a></li>
+                  <li><a href="#">Page 3</a></li>
+                </ul>
+                <!-- navbar-left왼쪽 위치 , navbar-right 오른쪽 위치 -->
+                <form class="navbar-form navbar-left" action="#">
+                    <div class="input-group">
+                      <input type="text" class="form-control" placeholder="Search">
+                      <div class="input-group-btn">
+                        <button class="btn btn-primary" type="submit">검색</button>
+                      </div>
+                    </div>
+                  </form>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">로그인 <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">로그인</a></li>
+                            <li><a href="#">회원가입</a></li>
+                        </ul>
+                    </li>
+                </ul>
+              </div>
+            </div>
+        </nav>
+
+    </header>
+
+    <!-- 배너영역 -->
+    <!-- 배너 영역과 헤더가 겹치지 않도록 margin처리 -->
+        <section class = "my-banner">
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                  <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                  <li data-target="#myCarousel" data-slide-to="1"></li>
+                  <li data-target="#myCarousel" data-slide-to="2"></li>
+                </ol>
+              
+                <!-- Wrapper for slides -->
+                <!-- a태그안에 이미지 삽입 -->
+                <div class="carousel-inner">
+                    <!-- 시간에 따라 작동 -->
+                  <div class="item active">
+                    <a href="">
+                        <img src="img/kimchi.jpg" alt="kimchi">
+                    </a>
+                  </div>
+              
+                  <div class="item">
+                    <a href="">
+                        <img src="img/digital.jpg" alt="digital">
+                    </a>
+                  </div>
+              
+                  <div class="item">
+                    <a href="">
+                        <img src="img/BEST.jpg" alt="BEST">
+                    </a>
+                  </div>
+                </div>
+              
+                <!-- Left and right controls -->
+                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                  <span class="glyphicon glyphicon-chevron-left"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                  <span class="glyphicon glyphicon-chevron-right"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
+
+
+        </section>
+
+        <section>
+            <div class="container">
+                <div class="row">
+                    <ul class = "col-xs-12 prod-list">
+                        <li class="col-sm-6">
+                            <a href="#" class="prod-box">
+                                <img src="img/box1.jpg">
+                                <span class="arrow"><i class="glyphicon glyphicon-menu-right"></i></span>
+                                <span class="hover">상세보기<i class="glyphicon glyphicon-menu-right"></i></span>
+                            </a>
+                        </li>
+
+
+                    </ul>
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- footer -->
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-sm-12">
+                        <div class ="footer-copyright">
+                            <a href="#">
+                                <img src="img/logo.svg" width="20" alt="log">
+                            </a>
+                            BrandCoding404 | 대표자 : 홍길자 | E-MAIL : ksdakfl@gmail.com<br/>
+                            개인정보보호책임자 : 홍길자 | KG-ITbank에서 오프라인 강의를 진행합니다
+                            주소 : 서울시 강남구
+                            <address>bootstrap. ALL RIGHTS RESERVED</address>
+                        </div>
+
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <ul class="footer-menu text-right">
+                                <li><a href="#">유용한정보</a></li>
+                                <li><a href="#">이용약관</a></li>
+                                <li><a href="#">고객센터</a></li>
+                                <li><a href="#">개인정보 취급방침</a></li>
+
+                            </ul>
+
+                        </div>
+
+                </div>
+
+            </div>
+        </footer>
 
     
 

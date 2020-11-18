@@ -21,7 +21,7 @@
 
   .my-header a img {
       width: 30px;
-      height: 30px;
+      height: 30px; 
       line-height: 30px;
       
   }
@@ -183,6 +183,189 @@
          .text-center{overflow: hidden;}
          .text-center ul{margin: 0;}
          .text-center button{float: right; padding: 4px 12px;}
+
+
+         /*========================================================*/
+
+
+         .detail-info .title {
+          font-size: 25px;
+        }
+  
+        .detail-info .price {
+          font-size: 30px;
+          /* hr태그가 아닌 bottom에 solid를 채워준다 */
+          border-top: 1px solid #777;
+          border-bottom: 1px solid #777;
+          padding: 10px 0;
+        }
+  
+        .detail-info .content {
+          color: gray;
+        }
+  
+        /* 부모영역 */
+        .detail-control .price,
+        .detail-control .order {
+          overflow: hidden;
+        }
+  
+        .detail-control .left {
+          float: left;
+  
+        }
+  
+        .detail-control .right {
+          float: right;
+  
+        }
+  
+        /*=== 글씨조정 ===*/
+        .detail-control .price .left {
+          font-size: 20px;
+          /* 글씨를 가운데로 보내주기 */
+          line-height: 52px;
+          margin: 0;
+        }
+  
+        .detail-control .price .right {
+          font-size: 30px;
+          /* 글씨를 가운데로 보내주기 */
+          line-height: 52px;
+          margin: 0;
+        }
+  
+
+
+
+        /*버튼영역*/
+        .detail-control
+  
+
+
+
+
+
+        /*댓글영역*/
+  
+        .reply-group input {width: 180px; margin-bottom: 10px;}
+  
+        .reply-wrap{
+          background-color: #f5f5f5;
+          border: 1px solid #ddd;
+          padding: 20px;
+          position: relative; /*부모영역*/
+        }
+  
+        .reply-img{position: absolute; top: 20px; left: 20px;} /*이미지 포지션*/
+        .reply-content{padding-left: 50px;}
+        .reply-group {
+          overflow: hidden;
+        }
+        .reply-group .left{
+          float: left; 
+        }
+        
+        .reply-group .right{
+          float: right;
+        }
+  
+        /* .reply-group .left input{
+          height: 25px;
+        } */
+      
+        .reply-content textarea{
+          margin-bottom: 5px;
+        }
+  
+        /*텍스트영역 리사이징 옵션, 애니메이션*/
+        .reply-content textarea{
+          resize: vertical;
+          height: 100px; /*높이*/
+          transition: height 0.5s ease-in-out; /*애니메이션효과 1)변경 속성, 속도, 효과*/
+        }
+  
+        .reply-content textarea:focus{
+          height: 200px;
+  
+        }
+  
+        /*댓글 코멘트 영역 - 위 클래스를 재황용*/
+        .reply-group a{text-decoration: none; color: black;}
+        .reply-group a{margin: 0;}
+
+
+
+        /* ================== 회원 가입 ================= */
+
+        /*col때문에 크기는 잡혀있음*/
+        .title-box{
+          width: 250px;
+          margin: 60px auto; /*박스 정렬*/
+          text-align: center; /*글씨 정렬*/
+          padding: 20px 40px;
+          border-bottom: 1px  solid #E1E1E1;
+          border-top: 1px solid #E1E1E1;
+      }
+
+      .join-form{
+          /*하나의 그리드 상자를 정가운데 정렬방법*/
+        
+          margin: 0 auto; /*가운데 정렬이 안되는이유가 col관련된 클래스 float을 가지고 있기 때문에*/
+          float: none; /*float 적용을 쓰지 않음*/
+
+          
+      }
+
+      .join-form form {
+          border: 1px solid #777;
+          border-radius: 10px;
+          box-shadow: -5px -10px 5px 20px rgb(0, 0, 0, 0.355); /*박스의 그림자 (가로, 세로, 흐릿정도, 색상)*/
+          padding: 50px;
+      }
+
+      @media (max-width: 767px) { /* 767미만일 때 적용(col-xs가 동작하는 픽셀과 같음)*/
+          .join-form form{
+              padding: 50px 10px;
+          }
+
+      }
+
+
+
+    /* =================로그================= */
+
+      .title-box{
+        width: 250px;
+        margin: 40px auto;
+        text-align: center;
+        font-size: 50px;
+    }
+
+    .login-form {
+        margin: 0px auto;
+        float: none;
+
+        width: 600px;
+    }
+
+
+    .login-form form{
+        border: 1px solid#777;
+        box-shadow: 5px 8px 16px rgb(0, 0, 0, 0.355);
+        padding: 10px;
+
+    }
+
+    @media (max-width: 767px) { /* 767미만일 때 적용(col-xs가 동작하는 픽셀과 같음)*/
+      .join-form form{
+          padding: 50px 10px;
+      }
+
+  }
+  
+      
+  
 
 
 
